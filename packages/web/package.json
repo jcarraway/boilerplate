@@ -1,0 +1,41 @@
+{
+  "name": "@example/web",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "nodemon server/index.ts",
+    "build": "next build",
+    "start": "next start",
+    "type-check": "tsc",
+    "generate": "gql-gen"
+  },
+  "dependencies": {
+    "@example/common": "0.0.1",
+    "@example/ui": "0.0.1",
+    "apollo-boost": "0.1.22",
+    "formik": "1.4.0",
+    "isomorphic-unfetch": "3.0.0",
+    "next": "7.0.2",
+    "next-routes": "1.4.2",
+    "react": "16.6.3",
+    "react-apollo": "2.3.2",
+    "react-dom": "16.6.3",
+    "styled-components": "4.1.2"
+  },
+  "devDependencies": {
+    "@types/next": "7.0.5",
+    "@types/react": "16.7.13",
+    "@types/react-dom": "16.0.11",
+    "@zeit/next-css": "1.0.1",
+    "@zeit/next-typescript": "1.1.1",
+    "file-loader": "2.0.0",
+    "graphql-code-generator": "0.14.5",
+    "graphql-codegen-typescript-client": "0.14.5",
+    "graphql-codegen-typescript-common": "0.14.5",
+    "nodemon": "1.18.8",
+    "graphql-codegen-typescript-react-apollo": "0.14.5",
+    "ts-node": "7.0.1",
+    "typescript": "3.2.2",
+    "url-loader": "1.1.2"
+  },
+  "license": "ISC"
+}
