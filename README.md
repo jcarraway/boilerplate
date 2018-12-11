@@ -1,0 +1,3 @@
+# Boilerplate
+
+Hack faster

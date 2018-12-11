@@ -1,0 +1,46 @@
+[
+  {
+    "name": "production",
+    "type": "postgres",
+    "synchronize": false,
+    "logging": true
+  },
+  {
+    "name": "development",
+    "type": "postgres",
+    "host": "localhost",
+    "port": 5432,
+    "username": "developer",
+    "password": "testpassword",
+    "database": "glow_dev",
+    "synchronize": true,
+    "logging": true,
+    "entities": ["src/entities/**/*.*"],
+    "migrations": ["src/migrations/**/*.*"],
+    "subscribers": ["src/subscribers/**/*.*"],
+    "cli": {
+      "entitiesDir": "src/entities",
+      "migrationsDir": "src/migrations",
+      "subscribersDir": "src/subscribers"
+    }
+  },
+  {
+    "name": "test",
+    "type": "postgres",
+    "host": "localhost",
+    "port": 5432,
+    "username": "developer",
+    "password": "testpassword",
+    "database": "example_test",
+    "synchronize": true,
+    "logging": true,
+    "entities": ["src/entities/**/*.*"],
+    "migrations": ["src/migrations/**/*.*"],
+    "subscribers": ["src/subscribers/**/*.*"],
+    "cli": {
+      "entitiesDir": "src/entities",
+      "migrationsDir": "src/migrations",
+      "subscribersDir": "src/subscribers"
+    }
+  }
+]
