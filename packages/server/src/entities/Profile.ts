@@ -1,10 +1,13 @@
 import { Entity, Column, OneToOne } from 'typeorm';
+import { ObjectType, Field } from 'type-graphql';
 
 import { CustomBaseEntity } from './CustomBaseEntity';
 import { User } from './User';
 
 @Entity('profiles')
+@ObjectType()
 export class Profile extends CustomBaseEntity {
+  @Field()
   @Column('text', { nullable: true })
   name: string;
 
