@@ -1,23 +1,61 @@
-import "reflect-metadata";
-import { ApolloServer } from "apollo-server-express";
-import * as express from "express";
-import { buildSchema } from "type-graphql";
+import 'reflect-metadata';
+// tslint:disable-next-line:no-var-requires
+require('dotenv').config();
+import { ApolloServer } from 'apollo-server-express';
+import * as express from 'express';
+import * as session from 'express-session';
+import * as connectRedis from 'connect-redis';
+import * as cors from 'cors';
 
-import { createDbConn } from "./createDbConn";
-import { UserResolver } from "./modules/user/UserResolver";
+import { createDbConn } from './createDbConn';
+import { buildTypeGraphQLSchema } from './buildSchema';
+import { redis } from './redis';
+import { redisSessionPrefix } from './constants';
+
+const RedisStore = connectRedis(session);
 
 const startServer = async () => {
+  if (process.env.NODE_ENV === 'test') {
+    await redis.flushall();
+  }
   await createDbConn();
 
   const app = express();
 
   const server = new ApolloServer({
-    schema: await buildSchema({
-      resolvers: [UserResolver]
-    })
+    schema: await buildTypeGraphQLSchema(),
+    context: ({ req, res }: any) => ({ req, res }),
   });
 
-  server.applyMiddleware({ app }); // app is from an existing express app
+  app.use(
+    cors({
+      credentials: true,
+      origin:
+        process.env.NODE_ENV === 'test'
+          ? '*'
+          : (process.env.FRONTEND_HOST as string),
+    })
+  );
+
+  app.use(
+    session({
+      store: new RedisStore({
+        client: redis as any,
+        prefix: redisSessionPrefix,
+      }),
+      name: 'xid',
+      secret: process.env.SESSION_SECRET as string,
+      resave: false,
+      saveUninitialized: false,
+      cookie: {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === 'production',
+        maxAge: 1000 * 60 * 60 * 24 * 7, // 7 days
+      },
+    })
+  );
+
+  server.applyMiddleware({ app, cors: false }); // app is from an existing express app
 
   app.listen({ port: 4000 }, () =>
     console.log(`🚀 Server ready at http://localhost:4000${server.graphqlPath}`)
