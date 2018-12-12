@@ -2071,13 +2071,6 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-dom@16.0.8":
-  version "16.0.8"
-  resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-16.0.8.tgz#6e1366ed629cadf55860cbfcc25db533f5d2fa7d"
-  dependencies:
-    "@types/node" "*"
-    "@types/react" "*"
-
 "@types/react-loadable@*":
   version "5.4.2"
   resolved "https://registry.yarnpkg.com/@types/react-loadable/-/react-loadable-5.4.2.tgz#087ead218ee0494c44e41fbdec7477b0ea4b7c86"
