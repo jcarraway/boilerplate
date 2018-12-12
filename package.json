@@ -16,6 +16,6 @@
     "graphql": "14.0.2"
   },
   "dependencies": {
-    "rimraf": "^2.6.2"
+    "rimraf": "2.6.2"
   }
 }
