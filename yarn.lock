@@ -9461,17 +9461,17 @@ mini-css-extract-plugin@0.4.3:
     schema-utils "^1.0.0"
     webpack-sources "^1.1.0"
 
-mini-css-extract-plugin@^0.4.4:
-  version "0.4.5"
-  resolved "https://registry.yarnpkg.com/mini-css-extract-plugin/-/mini-css-extract-plugin-0.4.5.tgz#c99e9e78d54f3fa775633aee5933aeaa4e80719a"
+mini-css-extract-plugin@0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/mini-css-extract-plugin/-/mini-css-extract-plugin-0.5.0.tgz#ac0059b02b9692515a637115b0cc9fed3a35c7b0"
   dependencies:
     loader-utils "^1.1.0"
     schema-utils "^1.0.0"
     webpack-sources "^1.1.0"
 
-mini-css-extract-plugin@^0.5.0:
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/mini-css-extract-plugin/-/mini-css-extract-plugin-0.5.0.tgz#ac0059b02b9692515a637115b0cc9fed3a35c7b0"
+mini-css-extract-plugin@^0.4.4:
+  version "0.4.5"
+  resolved "https://registry.yarnpkg.com/mini-css-extract-plugin/-/mini-css-extract-plugin-0.4.5.tgz#c99e9e78d54f3fa775633aee5933aeaa4e80719a"
   dependencies:
     loader-utils "^1.1.0"
     schema-utils "^1.0.0"
@@ -13285,16 +13285,6 @@ ts-jest@22.0.1:
     source-map-support "^0.5.0"
     yargs "^10.0.3"
 
-ts-loader@4.5.0:
-  version "4.5.0"
-  resolved "https://registry.yarnpkg.com/ts-loader/-/ts-loader-4.5.0.tgz#a1ce70b2dc799941fb2197605f0d67874097859b"
-  dependencies:
-    chalk "^2.3.0"
-    enhanced-resolve "^4.0.0"
-    loader-utils "^1.0.2"
-    micromatch "^3.1.4"
-    semver "^5.0.1"
-
 ts-loader@^2.3.7:
   version "2.3.7"
   resolved "https://registry.yarnpkg.com/ts-loader/-/ts-loader-2.3.7.tgz#a9028ced473bee12f28a75f9c5b139979d33f2fc"
@@ -14000,7 +13990,7 @@ webpack@4.20.2:
     watchpack "^1.5.0"
     webpack-sources "^1.3.0"
 
-webpack@^4.23.1, webpack@^4.27.1:
+webpack@4.27.1, webpack@^4.23.1:
   version "4.27.1"
   resolved "https://registry.yarnpkg.com/webpack/-/webpack-4.27.1.tgz#5f2e2db446d2266376fa15d7d2277a1a9c2e12bb"
   dependencies:
