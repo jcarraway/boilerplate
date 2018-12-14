@@ -2039,9 +2039,13 @@
   dependencies:
     "@types/node" "*"
 
-"@types/node@*", "@types/node@10.12.12", "@types/node@^10.1.0", "@types/node@^10.11.7":
+"@types/node@*", "@types/node@^10.1.0", "@types/node@^10.11.7":
   version "10.12.12"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-10.12.12.tgz#e15a9d034d9210f00320ef718a50c4a799417c47"
+
+"@types/node@10.12.15":
+  version "10.12.15"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-10.12.15.tgz#20e85651b62fd86656e57c9c9bc771ab1570bc59"
 
 "@types/prettier@1.15.2":
   version "1.15.2"
@@ -13284,16 +13288,6 @@ ts-jest@22.0.1:
     pkg-dir "^2.0.0"
     source-map-support "^0.5.0"
     yargs "^10.0.3"
-
-ts-loader@4.5.0:
-  version "4.5.0"
-  resolved "https://registry.yarnpkg.com/ts-loader/-/ts-loader-4.5.0.tgz#a1ce70b2dc799941fb2197605f0d67874097859b"
-  dependencies:
-    chalk "^2.3.0"
-    enhanced-resolve "^4.0.0"
-    loader-utils "^1.0.2"
-    micromatch "^3.1.4"
-    semver "^5.0.1"
 
 ts-loader@^2.3.7:
   version "2.3.7"
