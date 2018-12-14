@@ -31,7 +31,7 @@
     "graphql-code-generator": "0.14.5",
     "graphql-codegen-typescript-client": "0.14.5",
     "graphql-codegen-typescript-common": "0.14.5",
-    "graphql-codegen-typescript-react-apollo": "0.14.5",
+    "graphql-codegen-typescript-react-apollo": "0.15.0",
     "mini-css-extract-plugin": "0.5.0",
     "nodemon": "1.18.8",
     "ts-node": "7.0.1",
