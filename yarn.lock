@@ -14447,6 +14447,17 @@ yup@0.26.5:
     synchronous-promise "^2.0.5"
     toposort "^2.0.2"
 
+yup@^0.26.6:
+  version "0.26.6"
+  resolved "https://registry.yarnpkg.com/yup/-/yup-0.26.6.tgz#07e216a1424861f17958fef1d4775c64ef985724"
+  dependencies:
+    "@babel/runtime" "7.0.0"
+    fn-name "~2.0.1"
+    lodash "^4.17.10"
+    property-expr "^1.5.0"
+    synchronous-promise "^2.0.5"
+    toposort "^2.0.2"
+
 zen-observable-ts@^0.8.11:
   version "0.8.11"
   resolved "https://registry.yarnpkg.com/zen-observable-ts/-/zen-observable-ts-0.8.11.tgz#d54a27cd17dc4b4bb6bd008e5c096af7fcb068a9"
