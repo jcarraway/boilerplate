@@ -14447,7 +14447,7 @@ yup@0.26.5:
     synchronous-promise "^2.0.5"
     toposort "^2.0.2"
 
-yup@^0.26.6:
+yup@0.26.6:
   version "0.26.6"
   resolved "https://registry.yarnpkg.com/yup/-/yup-0.26.6.tgz#07e216a1424861f17958fef1d4775c64ef985724"
   dependencies:
