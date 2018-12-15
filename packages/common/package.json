@@ -8,10 +8,10 @@
     "build": "rimraf ./dist && tsc"
   },
   "dependencies": {
-    "yup": "0.26.5"
+    "yup": "0.26.6"
   },
   "devDependencies": {
-    "@types/yup": "0.24.9",
+    "@types/yup": "0.26.3",
     "rimraf": "2.6.2",
     "tslint": "5.11.0",
     "tslint-config-prettier": "1.17.0",
