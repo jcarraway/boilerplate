@@ -34,7 +34,7 @@
     "graphql-code-generator": "0.15.0",
 
     "mini-css-extract-plugin": "0.5.0",
-    "nodemon": "1.18.8",
+    "nodemon": "1.18.9",
     "ts-node": "7.0.1",
     "typescript": "3.2.2",
     "url-loader": "1.1.2",
