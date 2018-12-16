@@ -1,5 +1,5 @@
 import { Entity, Column, OneToOne, JoinColumn } from 'typeorm';
-import { ObjectType, Field } from 'type-graphql';
+import { ObjectType, Field, ID } from 'type-graphql';
 
 import { CustomBaseEntity } from './CustomBaseEntity';
 import { Profile } from './Profile';
@@ -22,15 +22,19 @@ export class User extends CustomBaseEntity {
   @Column()
   userType: string;
 
+  @Field()
   @Column('boolean', { default: false })
   confirmed: boolean;
 
+  @Field()
   @Column('boolean', { default: false })
   accountLocked: boolean;
 
+  @Field()
   @Column('int', { default: 0 })
   loginCount: number;
 
+  @Field(() => ID)
   @Column('uuid', { nullable: true })
   profileId: string;
 

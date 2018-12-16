@@ -25,6 +25,8 @@ const startServer = async () => {
   const server = new ApolloServer({
     schema: await buildTypeGraphQLSchema(),
     context: ({ req, res }: any) => ({ req, res }),
+    tracing: true,
+    cacheControl: true,
   });
 
   app.use(
@@ -57,7 +59,9 @@ const startServer = async () => {
 
   server.applyMiddleware({ app, cors: false }); // app is from an existing express app
 
-  app.listen({ port: 4000 }, () =>
+  const port = process.env.NODE_ENV === 'test' ? 0 : process.env.PORT || 4000;
+
+  app.listen(port, () =>
     console.log(`🚀 Server ready at http://localhost:4000${server.graphqlPath}`)
   );
 };
