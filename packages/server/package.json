@@ -10,7 +10,7 @@
     "@types/express-session": "1.15.11",
     "@types/graphql": "14.0.3",
     "@types/ioredis": "4.0.4",
-    "@types/node": "10.12.12",
+    "@types/node": "10.12.15",
     "@types/shortid": "0.0.29",
     "nodemon": "1.18.8",
     "ts-node": "7.0.1",
