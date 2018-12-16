@@ -7,19 +7,18 @@ import * as bcrypt from 'bcryptjs';
 import { registerSchema } from '@example/common';
 
 import { RegisterInput } from './register.input';
-import { RegisterResponse } from './register.response';
+// import { RegisterResponse } from './register.response';
 import { Profile } from './../../../entities/Profile';
 import { User } from './../../../entities/User';
 import { formatYupError } from './../../../utils/formatYupError';
+import { ErrorResponse } from '../../../entities/ErrorResponse';
 
 @Resolver()
 export class RegisterResolver {
   constructor() {}
 
-  @Mutation(() => RegisterResponse, { nullable: true })
-  async register(
-    @Arg('input') input: RegisterInput
-  ): Promise<RegisterResponse | null> {
+  @Mutation(() => ErrorResponse)
+  async register(@Arg('input') input: RegisterInput): Promise<ErrorResponse> {
     try {
       await registerSchema.validate(input, { abortEarly: false });
     } catch (err) {
@@ -48,14 +47,14 @@ export class RegisterResolver {
 
     // check if email is already in use
     const emailAlreadyExists = await User.findOne({
-      where: { username },
+      where: { email },
     });
 
     if (emailAlreadyExists) {
       return {
         errors: [
           {
-            path: 'username',
+            path: 'email',
             message: emailAlreadyExistsMessage,
           },
         ],
@@ -83,6 +82,8 @@ export class RegisterResolver {
       await User.update(user.id, { profile });
     }
 
-    return null;
+    return {
+      errors: [],
+    };
   }
 }

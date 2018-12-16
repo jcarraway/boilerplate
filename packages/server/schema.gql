@@ -14,8 +14,17 @@ type CustomBaseEntity {
 # The javascript `Date` as string. Type represents date and time as the ISO Date string.
 scalar DateTime
 
+type Error {
+  path: String!
+  message: String!
+}
+
+type ErrorResponse {
+  errors: [Error!]
+}
+
 type Mutation {
-  register(input: RegisterInput!): User
+  register(input: RegisterInput!): ErrorResponse!
 }
 
 type Profile {

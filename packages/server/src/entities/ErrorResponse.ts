@@ -1,9 +1,8 @@
-// import { User } from './../../../entities/User';
-import { Error } from './../../shared/error';
+import { Error } from './Error';
 import { ObjectType, Field } from 'type-graphql';
 
 @ObjectType()
-export class RegisterResponse {
+export class ErrorResponse {
   @Field(() => [Error], { nullable: true })
   errors?: Error[];
 }
