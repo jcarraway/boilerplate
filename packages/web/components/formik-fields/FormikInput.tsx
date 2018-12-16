@@ -1,0 +1,13 @@
+import * as React from 'react';
+import { Input } from '@example/ui';
+import { FieldProps } from 'formik';
+
+export const FormikInput = ({
+  field, // { name, value, onChange, onBlur }
+  form: { touched, errors }, // also values, setXXXX, handleXXXX, dirty, isValid, status, etc.
+  ...props
+}: FieldProps<any>) => {
+  const errorText = touched[field.name] && errors[field.name];
+
+  return <Input errorText={errorText} {...field} {...props} />;
+};
