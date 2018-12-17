@@ -19,6 +19,11 @@ export interface ITheme {
   };
 
   /**
+   * Testing a new theory
+   */
+  primaryColor: string;
+
+  /**
    * Border-radii according to design spec, can be accessed using `borderRadius={index}` in component props
    */
   radii: string[];
@@ -42,6 +47,7 @@ export interface ITheme {
 }
 
 const theme: ITheme = {
+  primaryColor: '#34404A',
   fonts: {
     sans: '"Rubik", sans-serif',
     mono: '"Roboto Mono", sans-serif',
@@ -73,27 +79,14 @@ const theme: ITheme = {
   space: ['4px', '6px', '8px', '10px', '14px'],
   buttons: {
     primary: {
-      backgroundColor: '#6DC1FD',
+      backgroundColor: '#34404A',
       color: '#ffffff',
-      margin: '0 10px',
-      fontSize: '14px',
-      padding: '8px 10px',
-      textTransform: 'uppercase',
-      borderRadius: '4px',
+      fontSize: '1em',
     },
-    topic: {
-      backgroundColor: '#E2F3FF',
-      color: '#3290D4',
-      borderRadius: '3px',
-      fontSize: '8px',
-      padding: '4px',
-      cursor: 'pointer',
-      '&:hover': {
-        backgroundColor: '#F3FAFF',
-      },
-      '&:not(:first-child)': {
-        marginLeft: '10px',
-      },
+    secondary: {
+      backgroundColor: 'white',
+      color: '#34404A',
+      fontSize: '1em',
     },
   },
 };

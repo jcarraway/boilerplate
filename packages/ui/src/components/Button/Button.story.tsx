@@ -4,8 +4,14 @@ import { action } from '@storybook/addon-actions';
 
 import Button from '.';
 
-storiesOf('Button', module).add('basic example', () => (
-  <Button variant="primary" onClick={action('primary-button-click')}>
-    New code review
-  </Button>
-));
+storiesOf('Button', module)
+  .add('primary example', () => (
+    <Button variant="primary" onClick={action('primary-button-click')}>
+      Primary
+    </Button>
+  ))
+  .add('secondary example', () => (
+    <Button variant="secondary" onClick={action('secondary-button-click')}>
+      Secondary
+    </Button>
+  ));

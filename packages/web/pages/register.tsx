@@ -8,7 +8,7 @@ export default class Register extends React.PureComponent {
   render() {
     return (
       <Layout title="Register">
-        <Button variant={'primary'}>Register</Button>
+        <Button variant="primary">Register</Button>
       </Layout>
     );
   }
