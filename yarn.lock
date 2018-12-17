@@ -3634,7 +3634,7 @@ babel-plugin-react-require@3.0.0:
   version "3.0.0"
   resolved "http://registry.npmjs.org/babel-plugin-react-require/-/babel-plugin-react-require-3.0.0.tgz#2e4e7b4496b93a654a1c80042276de4e4eeb20e3"
 
-"babel-plugin-styled-components@>= 1", babel-plugin-styled-components@^1.9.4:
+babel-plugin-styled-components@1.9.4, "babel-plugin-styled-components@>= 1":
   version "1.9.4"
   resolved "https://registry.yarnpkg.com/babel-plugin-styled-components/-/babel-plugin-styled-components-1.9.4.tgz#5f2c34d31237c6ee1e86453cc5fa488b97136669"
   dependencies:
