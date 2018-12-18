@@ -7,7 +7,7 @@ export default () => (
   <Layout title="About | Boilerplate">
     <h1>Hello 👋</h1>
     <p>
-      <Link href="/">
+      <Link prefetch href="/">
         <a>Home</a>
       </Link>
     </p>

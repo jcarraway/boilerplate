@@ -2,13 +2,13 @@ import {
   ApolloClient,
   InMemoryCache,
   HttpLink,
-  NormalizedCacheObject
-} from "apollo-boost";
-import fetch from "isomorphic-unfetch";
+  NormalizedCacheObject,
+} from 'apollo-boost';
+import fetch from 'isomorphic-unfetch';
 
 let apolloClient: ApolloClient<NormalizedCacheObject> | null = null;
 
-const isBrowser = typeof window !== "undefined";
+const isBrowser = typeof window !== 'undefined';
 
 // Polyfill fetch() on the server (used by apollo-client)
 if (!isBrowser) {
@@ -23,13 +23,13 @@ function create(initialState?: any) {
     ssrMode: !isBrowser, // Disables forceFetch on the server (so queries are only run once)
     link: new HttpLink({
       uri:
-        process.env.NODE_ENV === "production"
-          ? "https://server.codeponder.com/graphql"
-          : "http://localhost:4000/graphql",
-      credentials: "include"
+        process.env.NODE_ENV === 'production'
+          ? '*'
+          : 'http://localhost:4000/graphql',
+      credentials: 'include',
     }),
 
-    cache: new InMemoryCache().restore(initialState || {})
+    cache: new InMemoryCache().restore(initialState || {}),
   });
 }
 

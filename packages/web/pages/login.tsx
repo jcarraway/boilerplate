@@ -8,6 +8,7 @@ import { LoginMutationComponent } from '../components/apollo-components';
 import { normalizeErrors } from '../utils/normalizeErrors';
 import Router from 'next/router';
 import { meQuery } from '../graphql/user/queries/me.query';
+import Link from 'next/link';
 
 interface FormValues {
   usernameOrEmail: string;
@@ -83,6 +84,11 @@ export default class Login extends React.PureComponent<
                     >
                       Login
                     </Button>
+                    <p>
+                      <Link prefetch href="/register">
+                        <a>Register</a>
+                      </Link>
+                    </p>
                   </div>
                 </Form>
               )}

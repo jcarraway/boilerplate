@@ -1,13 +1,13 @@
-import React from "react";
-import Head from "next/head";
-import { ApolloClient, NormalizedCacheObject } from "apollo-boost";
-import { getDataFromTree } from "react-apollo";
+import React from 'react';
+import Head from 'next/head';
+import { ApolloClient, NormalizedCacheObject } from 'apollo-boost';
+import { getDataFromTree } from 'react-apollo';
 
-import initApollo from "./init-apollo";
+import initApollo from './init-apollo';
 
 export default (App: any) => {
   return class Apollo extends React.Component {
-    static displayName = "withApollo(App)";
+    static displayName = 'withApollo(App)';
     static async getInitialProps(ctx: any) {
       const { Component, router } = ctx;
 
@@ -34,7 +34,7 @@ export default (App: any) => {
           // Prevent Apollo Client GraphQL errors from crashing SSR.
           // Handle them in components via the data.error prop:
           // https://www.apollographql.com/docs/react/api/react-apollo.html#graphql-query-data-error
-          console.error("Error while running `getDataFromTree`", error);
+          console.error('Error while running `getDataFromTree`', error);
         }
 
         // getDataFromTree does not call componentWillUnmount
@@ -47,7 +47,7 @@ export default (App: any) => {
 
       return {
         ...appProps,
-        apolloState
+        apolloState,
       };
     }
 

@@ -8,6 +8,7 @@ import { FormikInput } from '../components/formik-fields/FormikInput';
 import { RegisterMutationComponent } from '../components/apollo-components';
 import { normalizeErrors } from '../utils/normalizeErrors';
 import Router from 'next/router';
+import Link from 'next/link';
 
 interface FormValues {
   email: string;
@@ -79,6 +80,11 @@ export default class Register extends React.PureComponent<
                     >
                       Register
                     </Button>
+                    <p>
+                      <Link prefetch href="/login">
+                        <a>Login</a>
+                      </Link>
+                    </p>
                   </div>
                 </Form>
               )}

@@ -2,20 +2,20 @@ import Link from 'next/link';
 import Layout from '../components/Layout';
 
 export default () => (
-  <Layout title="Home | Boilerplace">
+  <Layout title="Home | Boilerplate">
     <h1>Hello 👋</h1>
     <p>
-      <Link href="/about">
+      <Link prefetch href="/about">
         <a>About</a>
       </Link>
     </p>
     <p>
-      <Link href="/login">
+      <Link prefetch href="/login">
         <a>Login</a>
       </Link>
     </p>
     <p>
-      <Link href="/register">
+      <Link prefetch href="/register">
         <a>Register</a>
       </Link>
     </p>
