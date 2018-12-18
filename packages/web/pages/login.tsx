@@ -7,6 +7,7 @@ import { FormikInput } from '../components/formik-fields/FormikInput';
 import { LoginMutationComponent } from '../components/apollo-components';
 import { normalizeErrors } from '../utils/normalizeErrors';
 import Router from 'next/router';
+import { meQuery } from '../graphql/user/queries/me.query';
 
 interface FormValues {
   usernameOrEmail: string;
@@ -30,6 +31,18 @@ export default class Login extends React.PureComponent<
                 const response = await mutate({
                   variables: {
                     input,
+                  },
+                  update: (store, { data }) => {
+                    if (!data || !data.login.user) {
+                      return;
+                    }
+
+                    store.writeQuery({
+                      query: meQuery,
+                      data: {
+                        me: data.login.user,
+                      },
+                    });
                   },
                 });
                 console.log(response);

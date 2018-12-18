@@ -14,7 +14,7 @@ import { CustomContext } from './../../../types/Context';
 const invalidLoginResponse = {
   errors: [
     {
-      path: 'password',
+      path: 'login',
       message: invalidLoginMessage,
     },
   ],

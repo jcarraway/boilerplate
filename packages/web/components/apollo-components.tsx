@@ -73,6 +73,16 @@ export type RegisterMutationErrors = {
   message: string;
 };
 
+export type MeQueryVariables = {};
+
+export type MeQueryQuery = {
+  __typename?: "Query";
+
+  me: Maybe<MeQueryMe>;
+};
+
+export type MeQueryMe = UserInfoFragment;
+
 export type UserInfoFragment = {
   __typename?: "User";
 
@@ -209,4 +219,46 @@ export function RegisterMutationHOC<TProps, TChildProps = any>(
     RegisterMutationVariables,
     RegisterMutationProps<TChildProps>
   >(RegisterMutationDocument, operationOptions);
+}
+export const MeQueryDocument = gql`
+  query MeQuery {
+    me {
+      ...UserInfo
+    }
+  }
+
+  ${UserInfoFragmentDoc}
+`;
+export class MeQueryComponent extends React.Component<
+  Partial<ReactApollo.QueryProps<MeQueryQuery, MeQueryVariables>>
+> {
+  render() {
+    return (
+      <ReactApollo.Query<MeQueryQuery, MeQueryVariables>
+        query={MeQueryDocument}
+        {...(this as any)["props"] as any}
+      />
+    );
+  }
+}
+export type MeQueryProps<TChildProps = any> = Partial<
+  ReactApollo.DataProps<MeQueryQuery, MeQueryVariables>
+> &
+  TChildProps;
+export function MeQueryHOC<TProps, TChildProps = any>(
+  operationOptions:
+    | ReactApollo.OperationOption<
+        TProps,
+        MeQueryQuery,
+        MeQueryVariables,
+        MeQueryProps<TChildProps>
+      >
+    | undefined
+) {
+  return ReactApollo.graphql<
+    TProps,
+    MeQueryQuery,
+    MeQueryVariables,
+    MeQueryProps<TChildProps>
+  >(MeQueryDocument, operationOptions);
 }
