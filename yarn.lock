@@ -7337,18 +7337,6 @@ graphql-code-generator@0.15.1:
     request "2.88.0"
     valid-url "1.0.9"
 
-graphql-codegen-core@0.15.0:
-  version "0.15.0"
-  resolved "https://registry.yarnpkg.com/graphql-codegen-core/-/graphql-codegen-core-0.15.0.tgz#2c18dd30478fa5eb23ba88edda69e72027a01d2b"
-  dependencies:
-    chalk "2.4.1"
-    change-case "3.0.2"
-    common-tags "1.8.0"
-    graphql-tag "2.10.0"
-    graphql-tools "4.0.3"
-    ts-log "2.1.4"
-    winston "3.1.0"
-
 graphql-codegen-core@0.15.1:
   version "0.15.1"
   resolved "https://registry.yarnpkg.com/graphql-codegen-core/-/graphql-codegen-core-0.15.1.tgz#c9f74218827933dc2f97ebf2583daefd419bf144"
@@ -7360,13 +7348,6 @@ graphql-codegen-core@0.15.1:
     graphql-tools "4.0.3"
     ts-log "2.1.4"
     winston "3.1.0"
-
-graphql-codegen-plugin-helpers@0.15.0:
-  version "0.15.0"
-  resolved "https://registry.yarnpkg.com/graphql-codegen-plugin-helpers/-/graphql-codegen-plugin-helpers-0.15.0.tgz#e97a84b57d902b42c8aa1c4f3b1b1828ba309853"
-  dependencies:
-    graphql-codegen-core "0.15.0"
-    import-from "2.1.0"
 
 graphql-codegen-plugin-helpers@0.15.1:
   version "0.15.1"
@@ -7383,15 +7364,6 @@ graphql-codegen-typescript-client@0.15.1:
     graphql-codegen-plugin-helpers "0.15.1"
     graphql-codegen-typescript-common "0.15.1"
 
-graphql-codegen-typescript-common@0.15.0:
-  version "0.15.0"
-  resolved "https://registry.yarnpkg.com/graphql-codegen-typescript-common/-/graphql-codegen-typescript-common-0.15.0.tgz#02c337c6c4a73f34c604c7a3920c8d4311f305bc"
-  dependencies:
-    change-case "3.0.2"
-    common-tags "1.8.0"
-    graphql-codegen-core "0.15.0"
-    graphql-codegen-plugin-helpers "0.15.0"
-
 graphql-codegen-typescript-common@0.15.1:
   version "0.15.1"
   resolved "https://registry.yarnpkg.com/graphql-codegen-typescript-common/-/graphql-codegen-typescript-common-0.15.1.tgz#b7600c4910c1a1d02c92186dd12246ed5637eace"
@@ -7401,13 +7373,13 @@ graphql-codegen-typescript-common@0.15.1:
     graphql-codegen-core "0.15.1"
     graphql-codegen-plugin-helpers "0.15.1"
 
-graphql-codegen-typescript-react-apollo@0.15.0:
-  version "0.15.0"
-  resolved "https://registry.yarnpkg.com/graphql-codegen-typescript-react-apollo/-/graphql-codegen-typescript-react-apollo-0.15.0.tgz#93034ec004296f5fce03d34c717ba2812743fa52"
+graphql-codegen-typescript-react-apollo@0.15.1:
+  version "0.15.1"
+  resolved "https://registry.yarnpkg.com/graphql-codegen-typescript-react-apollo/-/graphql-codegen-typescript-react-apollo-0.15.1.tgz#e463294aa412a20a18449dbfb2d588227743f0e6"
   dependencies:
-    graphql-codegen-core "0.15.0"
-    graphql-codegen-plugin-helpers "0.15.0"
-    graphql-codegen-typescript-common "0.15.0"
+    graphql-codegen-core "0.15.1"
+    graphql-codegen-plugin-helpers "0.15.1"
+    graphql-codegen-typescript-common "0.15.1"
 
 graphql-config@2.2.1:
   version "2.2.1"
