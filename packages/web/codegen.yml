@@ -1,8 +1,8 @@
 schema: http://localhost:4000/graphql
-documents: ./graphql/**/*.ts
+documents: ./graphql/**/*.*.{ts,tsx}
 overwrite: true
 generates:
-  ./types/apollo-components.types.ts:
+  ./components/apollo-components.tsx:
     config:
       noNamespaces: true
     plugins:

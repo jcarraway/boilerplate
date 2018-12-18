@@ -9,5 +9,10 @@ export const FormikInput = ({
 }: FieldProps<any>) => {
   const errorText = touched[field.name] && errors[field.name];
 
-  return <Input errorText={errorText} {...field} {...props} />;
+  return (
+    <div>
+      <Input errorText={errorText} {...field} {...props} />
+      {errorText && <div>{errors[field.name]}</div>}
+    </div>
+  );
 };

@@ -1,9 +1,9 @@
 import App, { Container } from 'next/app';
 import React from 'react';
 import { ApolloProvider } from 'react-apollo';
+import { ThemeProvider, theme } from '@example/ui';
 
 import withApolloClient from '../lib/with-apollo-client';
-import { ThemeProvider, theme } from '@example/ui';
 
 class MyApp extends App {
   render() {
