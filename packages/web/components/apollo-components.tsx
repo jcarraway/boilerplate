@@ -6,8 +6,6 @@ export interface RegisterInput {
   email: string;
 
   password: string;
-
-  userType: string;
 }
 
 /** The javascript `Date` as string. Type represents date and time as the ISO Date string. */

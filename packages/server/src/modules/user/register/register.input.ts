@@ -12,6 +12,6 @@ export class RegisterInput implements Partial<User> {
   @Field()
   password: string;
 
-  @Field()
-  userType: string;
+  // @Field()
+  // userType: string;
 }

@@ -6,6 +6,8 @@ import Layout from '../components/Layout';
 import { FormikProps, Form, Field, Formik } from 'formik';
 import { FormikInput } from '../components/formik-fields/FormikInput';
 import { RegisterMutationComponent } from '../components/apollo-components';
+import { normalizeErrors } from '../utils/normalizeErrors';
+import Router from 'next/router';
 
 interface FormValues {
   email: string;
@@ -23,27 +25,31 @@ export default class Register extends React.PureComponent<
       <Layout title="Register">
         <RegisterMutationComponent>
           {mutate => (
-            <Formik
+            <Formik<FormValues>
               initialValues={initialValues}
-              onSubmit={async (
-                values: FormValues,
-                { resetForm, setSubmitting }
-              ) => {
-                await mutate({
+              onSubmit={async (input, { setSubmitting, setErrors }) => {
+                const response = await mutate({
                   variables: {
-                    input: {
-                      email: values.email,
-                      username: values.password,
-                      password: values.password,
-                      userType: 'user',
-                    },
+                    input,
                   },
                 });
-                setSubmitting(false);
-                resetForm();
-                console.log(values);
+                if (
+                  response &&
+                  response.data &&
+                  response.data.register.errors &&
+                  response.data.register.errors.length
+                ) {
+                  setSubmitting(false);
+                  return setErrors(
+                    normalizeErrors(response.data.register.errors)
+                  );
+                } else {
+                  Router.push('/');
+                }
               }}
               validationSchema={registerSchema}
+              validateOnChange={false}
+              validateOnBlur={false}
             >
               {({ isSubmitting }) => (
                 <Form>
@@ -52,6 +58,7 @@ export default class Register extends React.PureComponent<
                       name="email"
                       component={FormikInput}
                       placeholder="Email"
+                      type="email"
                     />
                     <Field
                       name="username"

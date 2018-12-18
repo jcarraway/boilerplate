@@ -19,7 +19,7 @@ export class User extends CustomBaseEntity {
   password: string;
 
   @Field()
-  @Column()
+  @Column({ default: 'user' })
   userType: string;
 
   @Field()
