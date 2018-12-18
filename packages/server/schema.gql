@@ -35,6 +35,7 @@ type LoginResponse {
 
 type Mutation {
   login(input: LoginInput!): LoginResponse!
+  logout: Boolean!
   register(input: RegisterInput!): ErrorResponse!
 }
 

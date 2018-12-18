@@ -24,7 +24,7 @@ const startServer = async () => {
 
   const server = new ApolloServer({
     schema: await buildTypeGraphQLSchema(),
-    context: ({ req, res }: any) => ({ req, res }),
+    context: ({ req, res }: any) => ({ redis, req, res }),
     tracing: true,
     cacheControl: true,
   });
