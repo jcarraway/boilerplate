@@ -89,6 +89,11 @@ export default class Login extends React.PureComponent<
                         <a>Register</a>
                       </Link>
                     </p>
+                    <p>
+                      <Link prefetch href="/forgot-password">
+                        <a>Forgot Password?</a>
+                      </Link>
+                    </p>
                   </div>
                 </Form>
               )}

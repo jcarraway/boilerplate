@@ -23,6 +23,11 @@ type ErrorResponse {
   errors: [Error!]
 }
 
+input ForgotPasswordChangeInput {
+  newPassword: String!
+  token: String!
+}
+
 input LoginInput {
   usernameOrEmail: String!
   password: String!
@@ -34,6 +39,8 @@ type LoginResponse {
 }
 
 type Mutation {
+  sendForgotPasswordEmail(email: String!): Boolean!
+  forgotPasswordChange(input: ForgotPasswordChangeInput!): ErrorResponse!
   login(input: LoginInput!): LoginResponse!
   logout: Boolean!
   register(input: RegisterInput!): ErrorResponse!

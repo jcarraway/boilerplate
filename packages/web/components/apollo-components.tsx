@@ -1,5 +1,11 @@
 export type Maybe<T> = T | null;
 
+export interface ForgotPasswordChangeInput {
+  newPassword: string;
+
+  token: string;
+}
+
 export interface LoginInput {
   usernameOrEmail: string;
 
@@ -20,6 +26,30 @@ export type DateTime = any;
 // ====================================================
 // Documents
 // ====================================================
+
+export type ForgotPasswordChangeMutationVariables = {
+  input: ForgotPasswordChangeInput;
+};
+
+export type ForgotPasswordChangeMutationMutation = {
+  __typename?: "Mutation";
+
+  forgotPasswordChange: ForgotPasswordChangeMutationForgotPasswordChange;
+};
+
+export type ForgotPasswordChangeMutationForgotPasswordChange = {
+  __typename?: "ErrorResponse";
+
+  errors: Maybe<ForgotPasswordChangeMutationErrors[]>;
+};
+
+export type ForgotPasswordChangeMutationErrors = {
+  __typename?: "Error";
+
+  path: string;
+
+  message: string;
+};
 
 export type LoginMutationVariables = {
   input: LoginInput;
@@ -81,6 +111,16 @@ export type RegisterMutationErrors = {
   message: string;
 };
 
+export type SendForgotPasswordEmailMutationVariables = {
+  email: string;
+};
+
+export type SendForgotPasswordEmailMutationMutation = {
+  __typename?: "Mutation";
+
+  sendForgotPasswordEmail: boolean;
+};
+
 export type MeQueryVariables = {};
 
 export type MeQueryQuery = {
@@ -122,6 +162,64 @@ export const UserInfoFragmentDoc = gql`
 // Components
 // ====================================================
 
+export const ForgotPasswordChangeMutationDocument = gql`
+  mutation forgotPasswordChangeMutation($input: ForgotPasswordChangeInput!) {
+    forgotPasswordChange(input: $input) {
+      errors {
+        path
+        message
+      }
+    }
+  }
+`;
+export class ForgotPasswordChangeMutationComponent extends React.Component<
+  Partial<
+    ReactApollo.MutationProps<
+      ForgotPasswordChangeMutationMutation,
+      ForgotPasswordChangeMutationVariables
+    >
+  >
+> {
+  render() {
+    return (
+      <ReactApollo.Mutation<
+        ForgotPasswordChangeMutationMutation,
+        ForgotPasswordChangeMutationVariables
+      >
+        mutation={ForgotPasswordChangeMutationDocument}
+        {...(this as any)["props"] as any}
+      />
+    );
+  }
+}
+export type ForgotPasswordChangeMutationProps<TChildProps = any> = Partial<
+  ReactApollo.MutateProps<
+    ForgotPasswordChangeMutationMutation,
+    ForgotPasswordChangeMutationVariables
+  >
+> &
+  TChildProps;
+export type ForgotPasswordChangeMutationMutationFn = ReactApollo.MutationFn<
+  ForgotPasswordChangeMutationMutation,
+  ForgotPasswordChangeMutationVariables
+>;
+export function ForgotPasswordChangeMutationHOC<TProps, TChildProps = any>(
+  operationOptions:
+    | ReactApollo.OperationOption<
+        TProps,
+        ForgotPasswordChangeMutationMutation,
+        ForgotPasswordChangeMutationVariables,
+        ForgotPasswordChangeMutationProps<TChildProps>
+      >
+    | undefined
+) {
+  return ReactApollo.graphql<
+    TProps,
+    ForgotPasswordChangeMutationMutation,
+    ForgotPasswordChangeMutationVariables,
+    ForgotPasswordChangeMutationProps<TChildProps>
+  >(ForgotPasswordChangeMutationDocument, operationOptions);
+}
 export const LoginMutationDocument = gql`
   mutation LoginMutation($input: LoginInput!) {
     login(input: $input) {
@@ -271,6 +369,59 @@ export function RegisterMutationHOC<TProps, TChildProps = any>(
     RegisterMutationVariables,
     RegisterMutationProps<TChildProps>
   >(RegisterMutationDocument, operationOptions);
+}
+export const SendForgotPasswordEmailMutationDocument = gql`
+  mutation SendForgotPasswordEmailMutation($email: String!) {
+    sendForgotPasswordEmail(email: $email)
+  }
+`;
+export class SendForgotPasswordEmailMutationComponent extends React.Component<
+  Partial<
+    ReactApollo.MutationProps<
+      SendForgotPasswordEmailMutationMutation,
+      SendForgotPasswordEmailMutationVariables
+    >
+  >
+> {
+  render() {
+    return (
+      <ReactApollo.Mutation<
+        SendForgotPasswordEmailMutationMutation,
+        SendForgotPasswordEmailMutationVariables
+      >
+        mutation={SendForgotPasswordEmailMutationDocument}
+        {...(this as any)["props"] as any}
+      />
+    );
+  }
+}
+export type SendForgotPasswordEmailMutationProps<TChildProps = any> = Partial<
+  ReactApollo.MutateProps<
+    SendForgotPasswordEmailMutationMutation,
+    SendForgotPasswordEmailMutationVariables
+  >
+> &
+  TChildProps;
+export type SendForgotPasswordEmailMutationMutationFn = ReactApollo.MutationFn<
+  SendForgotPasswordEmailMutationMutation,
+  SendForgotPasswordEmailMutationVariables
+>;
+export function SendForgotPasswordEmailMutationHOC<TProps, TChildProps = any>(
+  operationOptions:
+    | ReactApollo.OperationOption<
+        TProps,
+        SendForgotPasswordEmailMutationMutation,
+        SendForgotPasswordEmailMutationVariables,
+        SendForgotPasswordEmailMutationProps<TChildProps>
+      >
+    | undefined
+) {
+  return ReactApollo.graphql<
+    TProps,
+    SendForgotPasswordEmailMutationMutation,
+    SendForgotPasswordEmailMutationVariables,
+    SendForgotPasswordEmailMutationProps<TChildProps>
+  >(SendForgotPasswordEmailMutationDocument, operationOptions);
 }
 export const MeQueryDocument = gql`
   query MeQuery {

@@ -1,4 +1,4 @@
-import { Error } from './Error';
+import { Error } from '../../entities/Error';
 import { ObjectType, Field } from 'type-graphql';
 
 @ObjectType()

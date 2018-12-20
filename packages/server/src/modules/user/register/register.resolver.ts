@@ -5,7 +5,7 @@ import { registerSchema } from '@example/common';
 import { RegisterInput } from './register.input';
 import { Profile } from './../../../entities/Profile';
 import { User } from './../../../entities/User';
-import { ErrorResponse } from '../../../entities/ErrorResponse';
+import { ErrorResponse } from './../../shared/ErrorResponse';
 import { formatYupError } from './../../../utils/formatYupError';
 import {
   usernameAlreadyExistsMessage,

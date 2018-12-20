@@ -12,7 +12,6 @@ export const Logout: React.SFC = () => (
             return <div>Loading...</div>;
           }
           if (isLoggedIn) {
-            console.log('i am alive');
             return (
               <button
                 onClick={async () => {
