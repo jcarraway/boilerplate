@@ -13952,9 +13952,9 @@ type-check@~0.3.2:
   dependencies:
     prelude-ls "~1.1.2"
 
-type-graphql@0.15.0:
-  version "0.15.0"
-  resolved "https://registry.yarnpkg.com/type-graphql/-/type-graphql-0.15.0.tgz#755483d8350635334bb6b71305adbafb0445d04b"
+type-graphql@0.16.0:
+  version "0.16.0"
+  resolved "https://registry.yarnpkg.com/type-graphql/-/type-graphql-0.16.0.tgz#4d22beffb7ce3f8601e6ad090b4104b7852e5c9d"
   dependencies:
     "@types/glob" "^7.1.1"
     "@types/graphql" "^14.0.2"
