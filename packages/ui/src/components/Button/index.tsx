@@ -13,7 +13,7 @@ const StyledButton = styled.button`
   border: 2px solid ${props => props.theme.primaryColor};
   line-height: 1.75em;
   padding: 0.25em 1em;
-  margin: 1em;
+  margin: 0.5em;
   cursor: pointer;
   text-align: center;
   font-family: 'Rubik', sans-serif;
