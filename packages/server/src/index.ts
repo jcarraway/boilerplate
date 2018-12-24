@@ -26,7 +26,7 @@ const startServer = async () => {
     schema: await buildTypeGraphQLSchema(),
     context: ({ req, res }: any) => ({ redis, req, res }),
     tracing: true,
-    cacheControl: true,
+    // cacheControl: true,
   });
 
   app.use(
@@ -38,6 +38,19 @@ const startServer = async () => {
           : (process.env.FRONTEND_HOST as string),
     })
   );
+
+  app.use((req, _, next) => {
+    const authorization = req.headers.authorization;
+
+    if (authorization) {
+      try {
+        const xid = authorization.split(' ')[1];
+        req.headers.cookie = `xid=${xid}`;
+      } catch (_) {}
+    }
+
+    return next();
+  });
 
   app.use(
     session({

@@ -46,7 +46,7 @@ export default class Login extends React.PureComponent<
                     });
                   },
                 });
-                console.log(response);
+                console.log('login response', response);
                 if (
                   response &&
                   response.data &&

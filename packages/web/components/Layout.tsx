@@ -1,6 +1,8 @@
 import * as React from 'react';
 import Head from 'next/head';
-import { Logout } from './Logout';
+import { Wrapper } from '@example/ui';
+
+import { NavBar } from './NavBar';
 // import { LogoutMutationComponent } from './apollo-components';
 // import Router from 'next/router';
 
@@ -15,8 +17,10 @@ const Layout: React.SFC<Props> = ({ children, title }) => (
       <meta charSet="utf-8" />
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
-    {<Logout />}
-    {children}
+    <Wrapper>
+      <NavBar />
+      {children}
+    </Wrapper>
   </div>
 );
 

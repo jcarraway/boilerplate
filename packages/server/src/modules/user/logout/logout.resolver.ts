@@ -11,15 +11,17 @@ export class LogoutResolver {
   async logout(@Ctx() { redis, req, res }: CustomContext): Promise<boolean> {
     const { session } = req;
 
+    console.log('logout resolver session', session);
+
     if (session && session.userId) {
       await removeAllUsersSessions(session.userId, redis);
 
-      await new Promise((res, rej) =>
+      await new Promise(res =>
         session.destroy(err => {
           if (!err) {
             res();
           } else {
-            rej(err);
+            console.log(err);
           }
         })
       );

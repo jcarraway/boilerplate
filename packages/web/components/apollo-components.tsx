@@ -121,15 +121,15 @@ export type SendForgotPasswordEmailMutationMutation = {
   sendForgotPasswordEmail: boolean;
 };
 
-export type MeQueryVariables = {};
+export type MeVariables = {};
 
-export type MeQueryQuery = {
+export type MeQuery = {
   __typename?: "Query";
 
-  me: Maybe<MeQueryMe>;
+  me: Maybe<MeMe>;
 };
 
-export type MeQueryMe = UserInfoFragment;
+export type MeMe = UserInfoFragment;
 
 export type UserInfoFragment = {
   __typename?: "User";
@@ -423,8 +423,8 @@ export function SendForgotPasswordEmailMutationHOC<TProps, TChildProps = any>(
     SendForgotPasswordEmailMutationProps<TChildProps>
   >(SendForgotPasswordEmailMutationDocument, operationOptions);
 }
-export const MeQueryDocument = gql`
-  query MeQuery {
+export const MeDocument = gql`
+  query Me {
     me {
       ...UserInfo
     }
@@ -432,36 +432,36 @@ export const MeQueryDocument = gql`
 
   ${UserInfoFragmentDoc}
 `;
-export class MeQueryComponent extends React.Component<
-  Partial<ReactApollo.QueryProps<MeQueryQuery, MeQueryVariables>>
+export class MeComponent extends React.Component<
+  Partial<ReactApollo.QueryProps<MeQuery, MeVariables>>
 > {
   render() {
     return (
-      <ReactApollo.Query<MeQueryQuery, MeQueryVariables>
-        query={MeQueryDocument}
+      <ReactApollo.Query<MeQuery, MeVariables>
+        query={MeDocument}
         {...(this as any)["props"] as any}
       />
     );
   }
 }
-export type MeQueryProps<TChildProps = any> = Partial<
-  ReactApollo.DataProps<MeQueryQuery, MeQueryVariables>
+export type MeProps<TChildProps = any> = Partial<
+  ReactApollo.DataProps<MeQuery, MeVariables>
 > &
   TChildProps;
-export function MeQueryHOC<TProps, TChildProps = any>(
+export function MeHOC<TProps, TChildProps = any>(
   operationOptions:
     | ReactApollo.OperationOption<
         TProps,
-        MeQueryQuery,
-        MeQueryVariables,
-        MeQueryProps<TChildProps>
+        MeQuery,
+        MeVariables,
+        MeProps<TChildProps>
       >
     | undefined
 ) {
   return ReactApollo.graphql<
     TProps,
-    MeQueryQuery,
-    MeQueryVariables,
-    MeQueryProps<TChildProps>
-  >(MeQueryDocument, operationOptions);
+    MeQuery,
+    MeVariables,
+    MeProps<TChildProps>
+  >(MeDocument, operationOptions);
 }

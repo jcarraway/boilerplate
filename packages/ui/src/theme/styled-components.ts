@@ -13,3 +13,14 @@ const {
 
 export { css, createGlobalStyle, keyframes, ThemeProvider };
 export default styled;
+export const GlobalStyle = createGlobalStyle`
+  body {
+    background-color: #F9FBFD
+  }
+
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+`;
