@@ -139,6 +139,8 @@ export type UserInfoFragment = {
   username: string;
 
   email: string;
+
+  userType: string;
 };
 
 import * as ReactApollo from "react-apollo";
@@ -155,6 +157,7 @@ export const UserInfoFragmentDoc = gql`
     id
     username
     email
+    userType
   }
 `;
 
