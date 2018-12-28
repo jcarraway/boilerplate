@@ -12,6 +12,14 @@ export class User extends CustomBaseEntity {
   email: string;
 
   @Field()
+  @Column({ unique: true, nullable: true })
+  phoneNumber: string;
+
+  @Field()
+  @Column({ nullable: true })
+  phoneVerified: boolean;
+
+  @Field()
   @Column('text', { unique: true })
   username: string;
 

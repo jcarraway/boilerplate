@@ -43,6 +43,8 @@ type Mutation {
   forgotPasswordChange(input: ForgotPasswordChangeInput!): ErrorResponse!
   login(input: LoginInput!): LoginResponse!
   logout: Boolean!
+  sendPhoneVerification(phoneNumber: String!): Boolean!
+  checkPhoneVerification(code: String!): Boolean!
   register(input: RegisterInput!): ErrorResponse!
 }
 
@@ -72,6 +74,8 @@ type User {
   updatedDate: DateTime!
   version: Float!
   email: String!
+  phoneNumber: String!
+  phoneVerified: Boolean!
   username: String!
   userType: String!
   confirmed: Boolean!

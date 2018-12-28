@@ -6,11 +6,13 @@ import * as express from 'express';
 import * as session from 'express-session';
 import * as connectRedis from 'connect-redis';
 import * as cors from 'cors';
+// import { v4 } from 'uuid';
 
 import { createDbConn } from './createDbConn';
 import { buildTypeGraphQLSchema } from './buildSchema';
 import { redis } from './redis';
 import { redisSessionPrefix } from './constants';
+// import { GraphQLError } from 'graphql';
 
 const RedisStore = connectRedis(session);
 
@@ -26,6 +28,16 @@ const startServer = async () => {
     schema: await buildTypeGraphQLSchema(),
     context: ({ req, res }: any) => ({ redis, req, res }),
     tracing: true,
+    // formatError: (error: GraphQLError) => {
+    //   if (error.originalError instanceof ApolloError) {
+    //     return error;
+    //   }
+
+    //   const errId = v4();
+    //   console.log('errId: ', errId);
+    //   console.log(error);
+    //   return new GraphQLError(`Internal Error: ${errId}`);
+    // },
     // cacheControl: true,
   });
 

@@ -27,6 +27,16 @@ export type DateTime = any;
 // Documents
 // ====================================================
 
+export type CheckPhoneVerificationMutationVariables = {
+  code: string;
+};
+
+export type CheckPhoneVerificationMutationMutation = {
+  __typename?: "Mutation";
+
+  checkPhoneVerification: boolean;
+};
+
 export type ForgotPasswordChangeMutationVariables = {
   input: ForgotPasswordChangeInput;
 };
@@ -121,6 +131,16 @@ export type SendForgotPasswordEmailMutationMutation = {
   sendForgotPasswordEmail: boolean;
 };
 
+export type SendPhoneVerificationMutationVariables = {
+  phoneNumber: string;
+};
+
+export type SendPhoneVerificationMutationMutation = {
+  __typename?: "Mutation";
+
+  sendPhoneVerification: boolean;
+};
+
 export type MeVariables = {};
 
 export type MeQuery = {
@@ -165,6 +185,59 @@ export const UserInfoFragmentDoc = gql`
 // Components
 // ====================================================
 
+export const CheckPhoneVerificationMutationDocument = gql`
+  mutation checkPhoneVerificationMutation($code: String!) {
+    checkPhoneVerification(code: $code)
+  }
+`;
+export class CheckPhoneVerificationMutationComponent extends React.Component<
+  Partial<
+    ReactApollo.MutationProps<
+      CheckPhoneVerificationMutationMutation,
+      CheckPhoneVerificationMutationVariables
+    >
+  >
+> {
+  render() {
+    return (
+      <ReactApollo.Mutation<
+        CheckPhoneVerificationMutationMutation,
+        CheckPhoneVerificationMutationVariables
+      >
+        mutation={CheckPhoneVerificationMutationDocument}
+        {...(this as any)["props"] as any}
+      />
+    );
+  }
+}
+export type CheckPhoneVerificationMutationProps<TChildProps = any> = Partial<
+  ReactApollo.MutateProps<
+    CheckPhoneVerificationMutationMutation,
+    CheckPhoneVerificationMutationVariables
+  >
+> &
+  TChildProps;
+export type CheckPhoneVerificationMutationMutationFn = ReactApollo.MutationFn<
+  CheckPhoneVerificationMutationMutation,
+  CheckPhoneVerificationMutationVariables
+>;
+export function CheckPhoneVerificationMutationHOC<TProps, TChildProps = any>(
+  operationOptions:
+    | ReactApollo.OperationOption<
+        TProps,
+        CheckPhoneVerificationMutationMutation,
+        CheckPhoneVerificationMutationVariables,
+        CheckPhoneVerificationMutationProps<TChildProps>
+      >
+    | undefined
+) {
+  return ReactApollo.graphql<
+    TProps,
+    CheckPhoneVerificationMutationMutation,
+    CheckPhoneVerificationMutationVariables,
+    CheckPhoneVerificationMutationProps<TChildProps>
+  >(CheckPhoneVerificationMutationDocument, operationOptions);
+}
 export const ForgotPasswordChangeMutationDocument = gql`
   mutation forgotPasswordChangeMutation($input: ForgotPasswordChangeInput!) {
     forgotPasswordChange(input: $input) {
@@ -425,6 +498,59 @@ export function SendForgotPasswordEmailMutationHOC<TProps, TChildProps = any>(
     SendForgotPasswordEmailMutationVariables,
     SendForgotPasswordEmailMutationProps<TChildProps>
   >(SendForgotPasswordEmailMutationDocument, operationOptions);
+}
+export const SendPhoneVerificationMutationDocument = gql`
+  mutation sendPhoneVerificationMutation($phoneNumber: String!) {
+    sendPhoneVerification(phoneNumber: $phoneNumber)
+  }
+`;
+export class SendPhoneVerificationMutationComponent extends React.Component<
+  Partial<
+    ReactApollo.MutationProps<
+      SendPhoneVerificationMutationMutation,
+      SendPhoneVerificationMutationVariables
+    >
+  >
+> {
+  render() {
+    return (
+      <ReactApollo.Mutation<
+        SendPhoneVerificationMutationMutation,
+        SendPhoneVerificationMutationVariables
+      >
+        mutation={SendPhoneVerificationMutationDocument}
+        {...(this as any)["props"] as any}
+      />
+    );
+  }
+}
+export type SendPhoneVerificationMutationProps<TChildProps = any> = Partial<
+  ReactApollo.MutateProps<
+    SendPhoneVerificationMutationMutation,
+    SendPhoneVerificationMutationVariables
+  >
+> &
+  TChildProps;
+export type SendPhoneVerificationMutationMutationFn = ReactApollo.MutationFn<
+  SendPhoneVerificationMutationMutation,
+  SendPhoneVerificationMutationVariables
+>;
+export function SendPhoneVerificationMutationHOC<TProps, TChildProps = any>(
+  operationOptions:
+    | ReactApollo.OperationOption<
+        TProps,
+        SendPhoneVerificationMutationMutation,
+        SendPhoneVerificationMutationVariables,
+        SendPhoneVerificationMutationProps<TChildProps>
+      >
+    | undefined
+) {
+  return ReactApollo.graphql<
+    TProps,
+    SendPhoneVerificationMutationMutation,
+    SendPhoneVerificationMutationVariables,
+    SendPhoneVerificationMutationProps<TChildProps>
+  >(SendPhoneVerificationMutationDocument, operationOptions);
 }
 export const MeDocument = gql`
   query Me {
