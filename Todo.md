@@ -1,2 +1,3 @@
 - Serialize cookies (with cookie)
-- Display error on UI when change PW token is expired and link back to Forgot PW form
+- when change PW token is expired link back to Forgot PW form
+- Automagically format phone number as user types (& display format when input is empty)

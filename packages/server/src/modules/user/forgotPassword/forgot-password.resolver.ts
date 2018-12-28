@@ -51,7 +51,7 @@ export class ForgotPasswordResolver {
       return {
         errors: [
           {
-            path: 'change password',
+            path: 'newPassword',
             message: expiredKeyErrorMessage,
           },
         ],

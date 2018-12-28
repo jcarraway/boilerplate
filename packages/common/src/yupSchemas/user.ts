@@ -7,6 +7,15 @@ export const passwordTooShort: string =
 export const nameTooShort: string = 'name must be at least 2 characters';
 export const usernameNotValid = 'username can only contain letters and numbers';
 
+const phoneRegExp = /^\D?(\d{3})\D?\D?(\d{3})\D?(\d{4})$/;
+export const phoneNumberValidation = yup
+  .string()
+  .matches(phoneRegExp, 'Please provide a valid phone number');
+
+export const addPhoneSchema = yup.object().shape({
+  phoneNumber: phoneNumberValidation,
+});
+
 export const passwordValidation = yup
   .string()
   .min(5, passwordTooShort)

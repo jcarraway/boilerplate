@@ -1,10 +1,13 @@
 import * as React from 'react';
 import { FormikProps, Formik, Form, Field } from 'formik';
+import Router from 'next/router';
+import { Button } from '@example/ui';
+import { addPhoneSchema } from '@example/common';
+
 import Layout from '../components/Layout';
 import { SendPhoneVerificationMutationComponent } from '../components/apollo-components';
-import Router from 'next/router';
 import { FormikInput } from '../components/formik-fields/FormikInput';
-import { Button } from '@example/ui';
+import { normalizeErrors } from '../utils/normalizeErrors';
 
 interface FormValues {
   phoneNumber: string;
@@ -22,14 +25,28 @@ export default class AddPhone extends React.PureComponent<
           {mutate => (
             <Formik
               initialValues={initialValues}
-              onSubmit={async (phoneNumber, { setSubmitting }) => {
+              validationSchema={addPhoneSchema}
+              validateOnBlur={false}
+              validateOnChange={false}
+              onSubmit={async (phoneNumber, { setSubmitting, setErrors }) => {
                 console.log('onSubmit', phoneNumber);
                 const response = await mutate({
                   variables: phoneNumber,
                 });
                 console.log(response);
-                setSubmitting(false);
-                Router.push('/verify-phone');
+                if (
+                  response &&
+                  response.data &&
+                  response.data.sendPhoneVerification.errors &&
+                  response.data.sendPhoneVerification.errors.length
+                ) {
+                  setSubmitting(false);
+                  return setErrors(
+                    normalizeErrors(response.data.sendPhoneVerification.errors)
+                  );
+                } else {
+                  Router.push('/verify-phone');
+                }
               }}
             >
               {({ isSubmitting }) => (

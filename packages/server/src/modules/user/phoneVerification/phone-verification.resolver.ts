@@ -1,35 +1,64 @@
-import { checkPhoneVerification } from './../../../utils/phoneVerification';
+import { Resolver, Mutation, Arg, Ctx, Authorized } from 'type-graphql';
+
+import { PhoneVerificationResponse } from './phone-verification.response';
 import { User } from './../../../entities/User';
 import { CustomContext } from './../../../types/Context';
-import { startPhoneVerification } from '../../../utils/phoneVerification';
-import { Resolver, Mutation, Arg, Ctx } from 'type-graphql';
+import {
+  checkPhoneVerification,
+  startPhoneVerification,
+} from './../../../utils/phoneVerification';
 
 @Resolver()
-export class SendPhoneVerificationResolver {
+export class PhoneVerificationResolver {
   constructor() {}
 
-  @Mutation(() => Boolean)
-  async sendPhoneVerification(@Arg('phoneNumber') phoneNumber: string) {
-    // hard code for now (only support US and SMS verifications)
+  @Authorized()
+  @Mutation(() => PhoneVerificationResponse)
+  async sendPhoneVerification(
+    @Arg('phoneNumber') phoneNumber: string,
+    @Ctx() { req }: CustomContext
+  ): Promise<PhoneVerificationResponse> {
+    // hard code for now
+    // (only support US and SMS verifications)
     const country_code = '1';
     const via = 'sms';
 
-    const response = await startPhoneVerification(
-      phoneNumber,
-      country_code,
-      via
-    );
+    const cleanPhoneNumber = phoneNumber.replace(/\D/g, '');
 
-    console.log('sendPhoneVerification:::', response);
+    const userId = req.session!.userId;
 
-    return true;
+    if (userId) {
+      const response = await startPhoneVerification(
+        cleanPhoneNumber,
+        country_code,
+        via
+      );
+      if (response) {
+        console.log('startPhoneVerification:::', response);
+        if (response.success === true) {
+          await User.update(userId, { phoneNumber: cleanPhoneNumber });
+        }
+        return response;
+      }
+    }
+
+    return {
+      success: false,
+      errors: [
+        {
+          path: 'phoneNumber',
+          message: 'Oops! Something went wrong. Please try again.',
+        },
+      ],
+    };
   }
 
-  @Mutation(() => Boolean)
+  @Authorized()
+  @Mutation(() => PhoneVerificationResponse)
   async checkPhoneVerification(
     @Arg('code') code: string,
     @Ctx() { req }: CustomContext
-  ) {
+  ): Promise<PhoneVerificationResponse> {
     // hard code for now (only support US and SMS verifications)
     const country_code = '1';
 
@@ -42,17 +71,30 @@ export class SendPhoneVerificationResolver {
 
     const phoneNumber = user!.phoneNumber;
 
-    if (user && phoneNumber) {
-      console.log('hello');
+    if (phoneNumber) {
       const response = await checkPhoneVerification(
         phoneNumber,
         country_code,
         code
       );
       console.log('checkPhoneVerification:::', response);
-      return response;
+      if (response) {
+        if (response.success === true) {
+          await User.update(userId, { phoneVerified: true });
+        }
+        return response;
+      }
     }
 
-    return false;
+    return {
+      success: false,
+      errors: [
+        {
+          path: 'code',
+          message:
+            'Oops! Something went wrong during verification. Please try again.',
+        },
+      ],
+    };
   }
 }

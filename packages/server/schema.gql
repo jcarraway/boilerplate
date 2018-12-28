@@ -43,9 +43,14 @@ type Mutation {
   forgotPasswordChange(input: ForgotPasswordChangeInput!): ErrorResponse!
   login(input: LoginInput!): LoginResponse!
   logout: Boolean!
-  sendPhoneVerification(phoneNumber: String!): Boolean!
-  checkPhoneVerification(code: String!): Boolean!
+  sendPhoneVerification(phoneNumber: String!): PhoneVerificationResponse!
+  checkPhoneVerification(code: String!): PhoneVerificationResponse!
   register(input: RegisterInput!): ErrorResponse!
+}
+
+type PhoneVerificationResponse {
+  errors: [Error!]
+  success: Boolean
 }
 
 type Profile {

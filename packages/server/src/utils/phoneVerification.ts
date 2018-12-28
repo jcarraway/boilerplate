@@ -3,6 +3,11 @@ import { Client } from 'authy-client';
 
 const authyClient = new Client({ key: process.env.TWILIO_VERIFY_API_KEY });
 
+interface Response {
+  errors?: { path: string; message: string }[];
+  success?: boolean;
+}
+
 /**
  * Sends an SMS containing a confirmation code to the provided phone number
  * @param phone_number
@@ -14,13 +19,31 @@ export const startPhoneVerification = async (
   country_code: string,
   delivery_method: string
 ) => {
-  const response = await authyClient.startPhoneVerification({
-    countryCode: country_code,
-    phone: phone_number,
-    via: delivery_method,
-  });
-  console.log('startPhoneVerification response: ', response);
-  return response;
+  let myres: Response = {};
+  await authyClient
+    .startPhoneVerification({
+      countryCode: country_code,
+      phone: phone_number,
+      via: delivery_method,
+    })
+    .then((response: any) => {
+      console.log(response);
+      myres = { success: true };
+      return myres;
+    })
+    .catch((error: any) => {
+      console.log('error message: ', error.message);
+      myres = {
+        success: false,
+        errors: [
+          {
+            path: 'phoneNumber',
+            message: error.message,
+          },
+        ],
+      };
+    });
+  return myres;
 };
 
 /**
@@ -35,19 +58,32 @@ export const checkPhoneVerification = async (
   country_code: string,
   verification_code: string
 ) => {
-  const response = await authyClient.verifyPhone({
-    countryCode: country_code,
-    phone: phone_number,
-    token: verification_code,
-  });
-  console.log('checkPhoneVerification', response);
-  if (response.success === true) {
-    console.log('we here');
-    return true;
-  } else if (response.success === false) {
-    console.log('we also here');
-    return false;
-  } else {
-    return false;
-  }
+  let myres: Response = {};
+  await authyClient
+    .verifyPhone({
+      countryCode: country_code,
+      phone: phone_number,
+      token: verification_code,
+    })
+    .then((response: any) => {
+      console.log(response);
+      myres = { success: true };
+      return myres;
+    })
+    .catch((error: any) => {
+      console.log('error message', error.message);
+      const res = {
+        success: false,
+        errors: [
+          {
+            path: 'code',
+            message: 'Code is expired or incorrect. Please try again.',
+          },
+        ],
+      };
+      myres = res;
+      return myres;
+    });
+
+  return myres;
 };

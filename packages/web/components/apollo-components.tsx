@@ -34,7 +34,23 @@ export type CheckPhoneVerificationMutationVariables = {
 export type CheckPhoneVerificationMutationMutation = {
   __typename?: "Mutation";
 
-  checkPhoneVerification: boolean;
+  checkPhoneVerification: CheckPhoneVerificationMutationCheckPhoneVerification;
+};
+
+export type CheckPhoneVerificationMutationCheckPhoneVerification = {
+  __typename?: "PhoneVerificationResponse";
+
+  errors: Maybe<CheckPhoneVerificationMutationErrors[]>;
+
+  success: Maybe<boolean>;
+};
+
+export type CheckPhoneVerificationMutationErrors = {
+  __typename?: "Error";
+
+  path: string;
+
+  message: string;
 };
 
 export type ForgotPasswordChangeMutationVariables = {
@@ -138,7 +154,23 @@ export type SendPhoneVerificationMutationVariables = {
 export type SendPhoneVerificationMutationMutation = {
   __typename?: "Mutation";
 
-  sendPhoneVerification: boolean;
+  sendPhoneVerification: SendPhoneVerificationMutationSendPhoneVerification;
+};
+
+export type SendPhoneVerificationMutationSendPhoneVerification = {
+  __typename?: "PhoneVerificationResponse";
+
+  errors: Maybe<SendPhoneVerificationMutationErrors[]>;
+
+  success: Maybe<boolean>;
+};
+
+export type SendPhoneVerificationMutationErrors = {
+  __typename?: "Error";
+
+  path: string;
+
+  message: string;
 };
 
 export type MeVariables = {};
@@ -187,7 +219,13 @@ export const UserInfoFragmentDoc = gql`
 
 export const CheckPhoneVerificationMutationDocument = gql`
   mutation checkPhoneVerificationMutation($code: String!) {
-    checkPhoneVerification(code: $code)
+    checkPhoneVerification(code: $code) {
+      errors {
+        path
+        message
+      }
+      success
+    }
   }
 `;
 export class CheckPhoneVerificationMutationComponent extends React.Component<
@@ -501,7 +539,13 @@ export function SendForgotPasswordEmailMutationHOC<TProps, TChildProps = any>(
 }
 export const SendPhoneVerificationMutationDocument = gql`
   mutation sendPhoneVerificationMutation($phoneNumber: String!) {
-    sendPhoneVerification(phoneNumber: $phoneNumber)
+    sendPhoneVerification(phoneNumber: $phoneNumber) {
+      errors {
+        path
+        message
+      }
+      success
+    }
   }
 `;
 export class SendPhoneVerificationMutationComponent extends React.Component<
