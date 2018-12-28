@@ -3442,7 +3442,7 @@ atob@^2.1.1:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
 
-authy-client@^1.1.2:
+authy-client@1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/authy-client/-/authy-client-1.1.2.tgz#6ad0b9ca9752ddfec063afd42d85666ca2e8a880"
   dependencies:
