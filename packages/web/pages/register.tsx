@@ -1,14 +1,15 @@
 import * as React from 'react';
+import { FormikProps, Form, Field, Formik } from 'formik';
+import Link from 'next/link';
+import Router from 'next/router';
 import { Button } from '@example/ui';
 import { registerSchema } from '@example/common';
 
 import Layout from '../components/Layout';
-import { FormikProps, Form, Field, Formik } from 'formik';
 import { FormikInput } from '../components/formik-fields/FormikInput';
 import { RegisterMutationComponent } from '../components/apollo-components';
 import { normalizeErrors } from '../utils/normalizeErrors';
-import Router from 'next/router';
-import Link from 'next/link';
+import { meQuery } from '../graphql/user/queries/me.query';
 
 interface FormValues {
   email: string;
@@ -23,7 +24,7 @@ export default class Register extends React.PureComponent<
 > {
   render() {
     return (
-      <Layout title="Register">
+      <Layout title="Register | Boilerplate">
         <RegisterMutationComponent>
           {mutate => (
             <Formik<FormValues>
@@ -33,7 +34,20 @@ export default class Register extends React.PureComponent<
                   variables: {
                     input,
                   },
+                  update: (store, { data }) => {
+                    if (!data || !data.register.user) {
+                      return;
+                    }
+
+                    store.writeQuery({
+                      query: meQuery,
+                      data: {
+                        me: data.register.user,
+                      },
+                    });
+                  },
                 });
+                console.log('register response: ', response);
                 if (
                   response &&
                   response.data &&
@@ -45,7 +59,8 @@ export default class Register extends React.PureComponent<
                     normalizeErrors(response.data.register.errors)
                   );
                 } else {
-                  Router.push('/');
+                  console.log('wtf');
+                  Router.push('/add-phone');
                 }
               }}
               validationSchema={registerSchema}

@@ -5,7 +5,7 @@ import * as bcrypt from 'bcryptjs';
 
 import { LoginInput } from './login.input';
 import { User } from '../../../entities/User';
-import { LoginResponse } from '../../../entities/LoginResponse';
+import { LoginResponse } from '../../shared/LoginResponse';
 import {
   invalidLoginMessage,
   accountLockedErrorMessage,

@@ -124,10 +124,14 @@ export type RegisterMutationMutation = {
 };
 
 export type RegisterMutationRegister = {
-  __typename?: "ErrorResponse";
+  __typename?: "LoginResponse";
+
+  user: Maybe<RegisterMutationUser>;
 
   errors: Maybe<RegisterMutationErrors[]>;
 };
+
+export type RegisterMutationUser = UserInfoFragment;
 
 export type RegisterMutationErrors = {
   __typename?: "Error";
@@ -435,12 +439,17 @@ export function LogoutMutationHOC<TProps, TChildProps = any>(
 export const RegisterMutationDocument = gql`
   mutation RegisterMutation($input: RegisterInput!) {
     register(input: $input) {
+      user {
+        ...UserInfo
+      }
       errors {
         path
         message
       }
     }
   }
+
+  ${UserInfoFragmentDoc}
 `;
 export class RegisterMutationComponent extends React.Component<
   Partial<

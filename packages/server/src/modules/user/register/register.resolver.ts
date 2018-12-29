@@ -1,11 +1,13 @@
-import { Resolver, Mutation, Arg } from 'type-graphql';
+import { Resolver, Mutation, Arg, Ctx } from 'type-graphql';
 import * as bcrypt from 'bcryptjs';
 import { registerSchema } from '@example/common';
 
 import { RegisterInput } from './register.input';
 import { Profile } from './../../../entities/Profile';
 import { User } from './../../../entities/User';
-import { ErrorResponse } from './../../shared/ErrorResponse';
+import { userSessionIdPrefix } from './../../../constants';
+import { CustomContext } from './../../../types/Context';
+import { LoginResponse } from './../../shared/LoginResponse';
 import { formatYupError } from './../../../utils/formatYupError';
 import {
   usernameAlreadyExistsMessage,
@@ -16,8 +18,11 @@ import {
 export class RegisterResolver {
   constructor() {}
 
-  @Mutation(() => ErrorResponse)
-  async register(@Arg('input') input: RegisterInput): Promise<ErrorResponse> {
+  @Mutation(() => LoginResponse)
+  async register(
+    @Arg('input') input: RegisterInput,
+    @Ctx() { req, redis }: CustomContext
+  ): Promise<LoginResponse> {
     try {
       await registerSchema.validate(input, { abortEarly: false });
     } catch (err) {
@@ -80,8 +85,17 @@ export class RegisterResolver {
       await User.update(user.id, { profile });
     }
 
+    // log user in: add user's id to session stored in redis
+    req.session!.userId = user.id;
+    req.session!.userType = user.userType;
+    console.log('req.session login resolver', req.session);
+    if (req.sessionID) {
+      await redis.lpush(`${userSessionIdPrefix}${user.id}`, req.sessionID);
+    }
+
     return {
       errors: [],
+      user,
     };
   }
 }
