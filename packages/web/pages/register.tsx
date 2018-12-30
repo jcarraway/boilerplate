@@ -2,8 +2,8 @@ import * as React from 'react';
 import { FormikProps, Form, Field, Formik } from 'formik';
 import Link from 'next/link';
 import Router from 'next/router';
-import { Button } from '@example/ui';
-import { registerSchema } from '@example/common';
+import { Button } from '@hwyd/ui';
+import { registerSchema } from '@hwyd/common';
 
 import Layout from '../components/Layout';
 import { FormikInput } from '../components/formik-fields/FormikInput';

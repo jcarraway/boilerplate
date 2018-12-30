@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Head from 'next/head';
-import { Wrapper } from '@example/ui';
+import { Wrapper } from '@hwyd/ui';
 
 import { NavBar } from './NavBar';
 // import { LogoutMutationComponent } from './apollo-components';

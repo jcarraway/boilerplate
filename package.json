@@ -1,8 +1,8 @@
 {
   "private": true,
   "scripts": {
-    "build:server": "lerna run build --scope={@example/common,@example/server}",
-    "build:web": "lerna run build --scope={@example/common,@example/web}"
+    "build:server": "lerna run build --scope={@hwyd/common,@hwyd/server}",
+    "build:web": "lerna run build --scope={@hwyd/common,@hwyd/web}"
   },
   "workspaces": {
     "packages": [

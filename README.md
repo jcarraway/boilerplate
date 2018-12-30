@@ -1,3 +1,1 @@
-# Boilerplate
-
-Hack faster
+# How was your day?

@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Button } from '@example/ui';
+import { Button } from '@hwyd/ui';
 
 import Layout from '../components/Layout';
 

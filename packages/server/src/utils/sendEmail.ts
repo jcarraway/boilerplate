@@ -12,7 +12,7 @@ export const sendEmail = async (
   // Message object
   const message: MailData[] = [
     {
-      from: 'Example <sender@example.com>',
+      from: 'Example <sender@hwyd.com>',
       to: `Recipient <${recipient}>`,
       subject: 'Example email subject ✔',
       text: 'Example',

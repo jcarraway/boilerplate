@@ -1,6 +1,6 @@
 import { Resolver, Mutation, Arg, Ctx } from 'type-graphql';
 import * as bcrypt from 'bcryptjs';
-import { registerSchema } from '@example/common';
+import { registerSchema } from '@hwyd/common';
 
 import { RegisterInput } from './register.input';
 import { Profile } from './../../../entities/Profile';

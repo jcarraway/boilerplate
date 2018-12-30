@@ -1,7 +1,7 @@
 import App, { Container } from 'next/app';
 import React from 'react';
 import { ApolloProvider } from 'react-apollo';
-import { ThemeProvider, theme, GlobalStyle } from '@example/ui';
+import { ThemeProvider, theme, GlobalStyle } from '@hwyd/ui';
 
 import withApolloClient from '../lib/with-apollo-client';
 
