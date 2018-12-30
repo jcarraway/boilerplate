@@ -51,6 +51,7 @@ export const NavBar = () => {
                         await mutate({});
                         await client.resetStore();
                         Router.push('/');
+                        location.reload(true);
                       }}
                     >
                       Logout
