@@ -1,1 +1,1 @@
-# How was your day?
+# Boilerplate

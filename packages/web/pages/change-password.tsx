@@ -2,8 +2,8 @@ import * as React from 'react';
 import { FormikProps, Form, Field, Formik } from 'formik';
 import Link from 'next/link';
 import Router from 'next/router';
-import { Button } from '@hwyd/ui';
-import { changePasswordSchema } from '@hwyd/common';
+import { Button } from '@example/ui';
+import { changePasswordSchema } from '@example/common';
 
 import Layout from '../components/Layout';
 import { ForgotPasswordChangeMutationComponent } from '../components/apollo-components';

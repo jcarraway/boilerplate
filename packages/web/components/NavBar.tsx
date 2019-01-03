@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Link, Text, Flex } from 'rebass';
 import NextLink from 'next/link';
 import get from 'lodash.get';
-import { Button } from '@hwyd/ui';
+import { Button } from '@example/ui';
 import Router from 'next/router';
 import styled from 'styled-components';
 // import { Menu, Dropdown } from 'antd';

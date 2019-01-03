@@ -1,6 +1,6 @@
 import { Resolver, Mutation, Arg, Ctx } from 'type-graphql';
 import * as bcrypt from 'bcryptjs';
-import { changePasswordSchema } from '@hwyd/common';
+import { changePasswordSchema } from '@example/common';
 
 import { ForgotPasswordChangeInput } from './forgot-password.input';
 import { User } from './../../../entities/User';

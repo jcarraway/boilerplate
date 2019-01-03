@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Input } from '@hwyd/ui';
+import { Input } from '@example/ui';
 import { FieldProps } from 'formik';
 
 export const FormikInput = ({

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Button } from '@hwyd/ui';
+import { Button } from '@example/ui';
 
 import Layout from '../components/Layout';
 import { FormikProps, Form, Field, Formik } from 'formik';

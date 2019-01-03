@@ -1,5 +1,5 @@
 {
-  "name": "@hwyd/web",
+  "name": "@example/web",
   "version": "0.0.1",
   "scripts": {
     "dev": "nodemon server/index.ts",
@@ -9,8 +9,8 @@
     "generate": "gql-gen"
   },
   "dependencies": {
-    "@hwyd/common": "0.0.1",
-    "@hwyd/ui": "0.0.1",
+    "@example/common": "0.0.1",
+    "@example/ui": "0.0.1",
     "antd": "3.11.6",
     "apollo-boost": "0.1.23",
     "apollo-link-context": "1.0.12",

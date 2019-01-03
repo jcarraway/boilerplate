@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { FormikProps, Formik, Form, Field } from 'formik';
 import Router from 'next/router';
-import { Button } from '@hwyd/ui';
-import { addPhoneSchema } from '@hwyd/common';
+import { Button } from '@example/ui';
+import { addPhoneSchema } from '@example/common';
 
 import Layout from '../components/Layout';
 import { SendPhoneVerificationMutationComponent } from '../components/apollo-components';
