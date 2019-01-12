@@ -11,7 +11,7 @@
   "dependencies": {
     "@example/common": "0.0.1",
     "@example/ui": "0.0.1",
-    "antd": "3.12.1",
+    "antd": "3.12.2",
     "apollo-boost": "0.1.23",
     "apollo-link-context": "1.0.12",
     "apollo-link-http": "1.5.9",
