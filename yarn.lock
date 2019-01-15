@@ -13019,7 +13019,11 @@ redux@^4.0.1:
     loose-envify "^1.4.0"
     symbol-observable "^1.2.0"
 
-reflect-metadata@0.1.12, reflect-metadata@^0.1.12:
+reflect-metadata@0.1.13:
+  version "0.1.13"
+  resolved "https://registry.yarnpkg.com/reflect-metadata/-/reflect-metadata-0.1.13.tgz#67ae3ca57c972a2aa1642b10fe363fe32d49dc08"
+
+reflect-metadata@^0.1.12:
   version "0.1.12"
   resolved "https://registry.yarnpkg.com/reflect-metadata/-/reflect-metadata-0.1.12.tgz#311bf0c6b63cd782f228a81abe146a2bfa9c56f2"
 
@@ -14212,9 +14216,9 @@ styled-jsx@3.1.0:
     stylis "3.5.3"
     stylis-rule-sheet "0.0.10"
 
-styled-system@3.2.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/styled-system/-/styled-system-3.2.0.tgz#db08036035d6c5b8818ba7bccaf125d8711ecd9a"
+styled-system@3.2.1:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/styled-system/-/styled-system-3.2.1.tgz#491e1e6f88d7ee021f6f49376f12852cde8007cb"
   dependencies:
     "@babel/runtime" "^7.1.2"
     prop-types "^15.6.2"
