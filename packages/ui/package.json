@@ -42,7 +42,7 @@
     "react-docgen-typescript": "1.12.3",
     "react-docgen-typescript-webpack-plugin": "1.1.0",
     "storybook-addon-styled-component-theme": "1.1.1",
-    "typescript": "3.2.2"
+    "typescript": "3.2.4"
   },
   "browserslist": [
     ">0.2%",
