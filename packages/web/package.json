@@ -12,7 +12,7 @@
     "@example/common": "0.0.1",
     "@example/ui": "0.0.1",
     "antd": "3.12.3",
-    "apollo-boost": "0.1.25",
+    "apollo-boost": "0.1.26",
     "apollo-link-context": "1.0.12",
     "apollo-link-http": "1.5.9",
     "babel-plugin-import": "1.11.0",
