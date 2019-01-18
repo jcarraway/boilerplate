@@ -3009,13 +3009,13 @@ anymatch@^2.0.0:
     micromatch "^3.1.4"
     normalize-path "^2.1.1"
 
-apollo-boost@0.1.24:
-  version "0.1.24"
-  resolved "https://registry.yarnpkg.com/apollo-boost/-/apollo-boost-0.1.24.tgz#77860f919f645f1d00d7b24f97dfbc59fcf42e19"
+apollo-boost@0.1.25:
+  version "0.1.25"
+  resolved "https://registry.yarnpkg.com/apollo-boost/-/apollo-boost-0.1.25.tgz#1172051cc6c0a2ebfe50efb73d3e259338c451b7"
   dependencies:
-    apollo-cache "^1.1.23"
-    apollo-cache-inmemory "^1.4.0"
-    apollo-client "^2.4.9"
+    apollo-cache "^1.1.24"
+    apollo-cache-inmemory "^1.4.1"
+    apollo-client "^2.4.10"
     apollo-link "^1.0.6"
     apollo-link-error "^1.0.3"
     apollo-link-http "^1.3.1"
@@ -3029,29 +3029,29 @@ apollo-cache-control@0.4.0:
     apollo-server-env "2.2.0"
     graphql-extensions "0.4.0"
 
-apollo-cache-inmemory@^1.4.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/apollo-cache-inmemory/-/apollo-cache-inmemory-1.4.0.tgz#8bcb1de8d1950dcdbd42f9af6d16fccca8e9e9ca"
+apollo-cache-inmemory@^1.4.1:
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/apollo-cache-inmemory/-/apollo-cache-inmemory-1.4.1.tgz#91211742d61305fb4e2a6fc2272a66b2c651b7f3"
   dependencies:
-    apollo-cache "^1.1.23"
-    apollo-utilities "^1.1.0"
-    optimism "^0.6.8"
+    apollo-cache "^1.1.24"
+    apollo-utilities "^1.1.1"
+    optimism "^0.6.9"
 
-apollo-cache@1.1.23, apollo-cache@^1.1.23:
-  version "1.1.23"
-  resolved "https://registry.yarnpkg.com/apollo-cache/-/apollo-cache-1.1.23.tgz#4765571223cae756ab7faf29792f1ab9a8450a91"
+apollo-cache@1.1.24, apollo-cache@^1.1.24:
+  version "1.1.24"
+  resolved "https://registry.yarnpkg.com/apollo-cache/-/apollo-cache-1.1.24.tgz#2b833864458e97ae1da72901e0c25aa3cf83b233"
   dependencies:
-    apollo-utilities "^1.1.0"
+    apollo-utilities "^1.1.1"
 
-apollo-client@^2.4.9:
-  version "2.4.9"
-  resolved "https://registry.yarnpkg.com/apollo-client/-/apollo-client-2.4.9.tgz#c5fbd4d04645e228dd6a49f5b03b41cb1c2e5ae7"
+apollo-client@^2.4.10:
+  version "2.4.10"
+  resolved "https://registry.yarnpkg.com/apollo-client/-/apollo-client-2.4.10.tgz#de9e78fb4589b7e95920e487f8f3319a55b1cfed"
   dependencies:
     "@types/zen-observable" "^0.8.0"
-    apollo-cache "1.1.23"
+    apollo-cache "1.1.24"
     apollo-link "^1.0.0"
     apollo-link-dedup "^1.0.0"
-    apollo-utilities "1.1.0"
+    apollo-utilities "1.1.1"
     symbol-observable "^1.0.2"
     zen-observable "^0.8.0"
   optionalDependencies:
@@ -3222,9 +3222,9 @@ apollo-tracing@0.4.0:
     apollo-server-env "2.2.0"
     graphql-extensions "0.4.0"
 
-apollo-utilities@1.1.0, apollo-utilities@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/apollo-utilities/-/apollo-utilities-1.1.0.tgz#e7603f834b57e4e109be6b450dc1cc1037aac94c"
+apollo-utilities@1.1.1, apollo-utilities@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/apollo-utilities/-/apollo-utilities-1.1.1.tgz#7175a07384d8e1f273ec1cf049a0d77c723b9ce3"
   dependencies:
     fast-json-stable-stringify "^2.0.0"
 
@@ -10975,9 +10975,9 @@ opn@5.4.0, opn@^5.1.0, opn@^5.4.0:
   dependencies:
     is-wsl "^1.1.0"
 
-optimism@^0.6.8:
-  version "0.6.8"
-  resolved "https://registry.yarnpkg.com/optimism/-/optimism-0.6.8.tgz#0780b546da8cd0a72e5207e0c3706c990c8673a6"
+optimism@^0.6.9:
+  version "0.6.9"
+  resolved "https://registry.yarnpkg.com/optimism/-/optimism-0.6.9.tgz#19258ff8b3be0cea29ac35f06bff818e026e30bb"
   dependencies:
     immutable-tuple "^0.4.9"
 
