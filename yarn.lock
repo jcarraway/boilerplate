@@ -2523,9 +2523,9 @@
     "@types/events" "*"
     "@types/node" "*"
 
-"@types/yup@0.26.5":
-  version "0.26.5"
-  resolved "https://registry.yarnpkg.com/@types/yup/-/yup-0.26.5.tgz#ab47c03965d775cdc9228b699bf46331068db367"
+"@types/yup@0.26.10":
+  version "0.26.10"
+  resolved "https://registry.yarnpkg.com/@types/yup/-/yup-0.26.10.tgz#d983334ee153020189acdc17d66b02dc43e80206"
 
 "@types/zen-observable@^0.8.0":
   version "0.8.0"
@@ -16042,9 +16042,9 @@ yn@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/yn/-/yn-2.0.0.tgz#e5adabc8acf408f6385fc76495684c88e6af689a"
 
-yup@0.26.7:
-  version "0.26.7"
-  resolved "https://registry.yarnpkg.com/yup/-/yup-0.26.7.tgz#7480312d1a3efd8a2f5c1f98b0f11fc21c80efc8"
+yup@0.26.10:
+  version "0.26.10"
+  resolved "https://registry.yarnpkg.com/yup/-/yup-0.26.10.tgz#3545839663289038faf25facfc07e11fd67c0cb1"
   dependencies:
     "@babel/runtime" "7.0.0"
     fn-name "~2.0.1"
