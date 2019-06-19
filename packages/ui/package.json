@@ -33,7 +33,7 @@
     "@types/rebass": "3.0.3",
     "@types/storybook__addon-actions": "3.4.1",
     "@types/storybook__addon-info": "3.4.2",
-    "@types/storybook__addon-links": "3.3.3",
+    "@types/storybook__addon-links": "3.3.5",
     "@types/storybook__react": "4.0.0",
     "@types/styled-system": "3.2.2",
     "@types/styled-components": "4.1.11",
