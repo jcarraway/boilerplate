@@ -33,7 +33,7 @@
     "@types/cookie": "0.3.2",
     "@types/lodash": "4.14.121",
     "@types/lodash.get": "4.4.5",
-    "@types/next": "7.0.6",
+    "@types/next": "8.0.7",
     "@types/react": "16.8.5",
     "@types/react-dom": "16.8.2",
     "@zeit/next-css": "1.0.1",

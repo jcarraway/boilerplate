@@ -2358,9 +2358,9 @@
     "@types/react" "*"
     "@types/react-loadable" "*"
 
-"@types/next@7.0.6":
-  version "7.0.6"
-  resolved "https://registry.yarnpkg.com/@types/next/-/next-7.0.6.tgz#c4dabfe8707404160651ecf1fa35fd33cc566cdb"
+"@types/next@8.0.7":
+  version "8.0.7"
+  resolved "https://registry.yarnpkg.com/@types/next/-/next-8.0.7.tgz#a23d8c96ee63dbb8d2c315c8ad51292928069acd"
   dependencies:
     "@types/next-server" "*"
     "@types/node" "*"
