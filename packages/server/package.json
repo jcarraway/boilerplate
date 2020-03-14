@@ -31,7 +31,7 @@
     "express-session": "1.15.6",
     "graphql": "14.1.1",
     "ioredis": "4.6.2",
-    "pg": "7.8.0",
+    "pg": "7.18.2",
     "reflect-metadata": "0.1.13",
     "shortid": "2.2.14",
     "type-graphql": "0.16.0",
