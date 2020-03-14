@@ -20,7 +20,7 @@
   "dependencies": {
     "@example/common": "0.0.1",
     "@sendgrid/helpers": "6.3.0",
-    "@sendgrid/mail": "6.3.1",
+    "@sendgrid/mail": "6.5.4",
     "apollo-server-express": "2.4.8",
     "authy-client": "1.1.2",
     "bcryptjs": "2.4.3",
