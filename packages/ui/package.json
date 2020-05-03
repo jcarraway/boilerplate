@@ -11,8 +11,8 @@
     "storybook": "start-storybook -p 9009 -s public"
   },
   "dependencies": {
-    "react": "16.7.0",
-    "react-dom": "16.7.0",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
     "react-scripts-ts": "3.1.0",
     "rebass": "3.0.1",
     "styled-components": "4.1.3",
