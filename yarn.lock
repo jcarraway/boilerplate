@@ -2430,12 +2430,13 @@
     "@types/prop-types" "*"
     csstype "^2.2.0"
 
-"@types/react@16.8.5":
-  version "16.8.5"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.8.5.tgz#03b9a6597bc20f6eaaed43f377a160f7e41c2b90"
+"@types/react@16.9.55":
+  version "16.9.55"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.9.55.tgz#47078587f5bfe028a23b6b46c7b94ac0d436acff"
+  integrity sha512-6KLe6lkILeRwyyy7yG9rULKJ0sXplUsl98MGoCfpteXf9sPWFWWMknDcsvubcpaTdBuxtsLF6HDUwdApZL/xIg==
   dependencies:
     "@types/prop-types" "*"
-    csstype "^2.2.0"
+    csstype "^3.0.2"
 
 "@types/rebass@3.0.3":
   version "3.0.3"
@@ -6168,6 +6169,11 @@ cssstyle@^1.0.0:
 csstype@^2.2.0:
   version "2.5.8"
   resolved "https://registry.yarnpkg.com/csstype/-/csstype-2.5.8.tgz#4ce5aa16ea0d562ef9105fa3ae2676f199586a35"
+
+csstype@^3.0.2:
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/csstype/-/csstype-3.0.4.tgz#b156d7be03b84ff425c9a0a4b1e5f4da9c5ca888"
+  integrity sha512-xc8DUsCLmjvCfoD7LTGE0ou2MIWLx0K9RCZwSHMOdynqRsP4MtUcLeqh1HcQ2dInwDTqn+3CE0/FZh1et+p4jA==
 
 currently-unhandled@^0.4.1:
   version "0.4.1"
