@@ -19,7 +19,7 @@
     "styled-system": "3.2.1"
   },
   "devDependencies": {
-    "@babel/core": "7.3.4",
+    "@babel/core": "7.14.6",
     "@storybook/addon-actions": "4.1.13",
     "@storybook/addon-info": "4.1.13",
     "@storybook/addon-links": "4.1.13",
@@ -38,7 +38,7 @@
     "@types/styled-system": "3.2.2",
     "@types/styled-components": "4.1.11",
     "awesome-typescript-loader": "5.2.1",
-    "babel-loader": "8.0.5",
+    "babel-loader": "8.2.2",
     "react-docgen-typescript": "1.12.3",
     "react-docgen-typescript-webpack-plugin": "1.1.0",
     "storybook-addon-styled-component-theme": "1.1.1",
