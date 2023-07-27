@@ -15,7 +15,7 @@
     "apollo-boost": "0.3.1",
     "apollo-link-context": "1.0.14",
     "apollo-link-http": "1.5.11",
-    "babel-plugin-import": "1.11.0",
+    "babel-plugin-import": "1.13.8",
     "cookie": "0.3.1",
     "formik": "1.5.1",
     "isomorphic-unfetch": "3.0.0",
