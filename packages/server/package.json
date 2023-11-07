@@ -5,7 +5,7 @@
   "description": "Boilerplate server",
   "devDependencies": {
     "@types/bcryptjs": "2.4.2",
-    "@types/connect-redis": "0.0.8",
+    "@types/connect-redis": "0.0.23",
     "@types/express": "4.16.1",
     "@types/express-session": "1.15.12",
     "@types/graphql": "14.0.5",
