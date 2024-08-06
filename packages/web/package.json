@@ -41,7 +41,7 @@
     "babel-plugin-styled-components": "1.10.0",
     "file-loader": "3.0.1",
     "graphql-codegen-typescript-client": "0.17.0",
-    "graphql-code-generator": "0.17.0",
+    "graphql-code-generator": "0.18.2",
     "graphql-codegen-typescript-common": "0.17.0",
     "graphql-codegen-typescript-react-apollo": "0.16.0",
     "mini-css-extract-plugin": "0.5.0",
