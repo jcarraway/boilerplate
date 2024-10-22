@@ -19,7 +19,7 @@
     "styled-system": "3.2.1"
   },
   "devDependencies": {
-    "@babel/core": "7.3.4",
+    "@babel/core": "7.25.9",
     "@storybook/addon-actions": "4.1.13",
     "@storybook/addon-info": "4.1.13",
     "@storybook/addon-links": "4.1.13",
