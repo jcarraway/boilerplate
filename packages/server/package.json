@@ -36,7 +36,7 @@
     "shortid": "2.2.14",
     "type-graphql": "0.16.0",
     "typeorm": "0.2.12",
-    "uuid": "3.3.2",
+    "uuid": "11.1.1",
     "yup": "0.26.10"
   },
   "scripts": {
